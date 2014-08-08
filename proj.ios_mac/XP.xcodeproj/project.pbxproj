@@ -36,6 +36,12 @@
 		39E74FE81988944C00D20307 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39E74FDD1988944C00D20307 /* MainScene.cpp */; };
 		39E74FEA19889C5600D20307 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = 39E74FE919889C5600D20307 /* GUI */; };
 		39E74FEC19889F0E00D20307 /* Fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 39E74FEB19889F0E00D20307 /* Fill.png */; };
+		39EC8F561994A195004CB8A3 /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EC8F501994A195004CB8A3 /* a.png */; };
+		39EC8F571994A195004CB8A3 /* b.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EC8F511994A195004CB8A3 /* b.png */; };
+		39EC8F581994A195004CB8A3 /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EC8F521994A195004CB8A3 /* c.png */; };
+		39EC8F591994A195004CB8A3 /* d.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EC8F531994A195004CB8A3 /* d.png */; };
+		39EC8F5A1994A195004CB8A3 /* stick.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EC8F541994A195004CB8A3 /* stick.png */; };
+		39EC8F5B1994A195004CB8A3 /* stickBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EC8F551994A195004CB8A3 /* stickBg.png */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -259,6 +265,12 @@
 		39E74FE01988944C00D20307 /* SceneInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneInit.h; sourceTree = "<group>"; };
 		39E74FE919889C5600D20307 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
 		39E74FEB19889F0E00D20307 /* Fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fill.png; sourceTree = "<group>"; };
+		39EC8F501994A195004CB8A3 /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a.png; sourceTree = "<group>"; };
+		39EC8F511994A195004CB8A3 /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
+		39EC8F521994A195004CB8A3 /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
+		39EC8F531994A195004CB8A3 /* d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = d.png; sourceTree = "<group>"; };
+		39EC8F541994A195004CB8A3 /* stick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick.png; sourceTree = "<group>"; };
+		39EC8F551994A195004CB8A3 /* stickBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickBg.png; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -533,6 +545,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				39EC8F501994A195004CB8A3 /* a.png */,
+				39EC8F511994A195004CB8A3 /* b.png */,
+				39EC8F521994A195004CB8A3 /* c.png */,
+				39EC8F531994A195004CB8A3 /* d.png */,
+				39EC8F541994A195004CB8A3 /* stick.png */,
+				39EC8F551994A195004CB8A3 /* stickBg.png */,
 				39E74FE919889C5600D20307 /* GUI */,
 				39E74FBF1988942D00D20307 /* bj1.png */,
 				39E74FC01988942D00D20307 /* bj2.png */,
@@ -704,22 +722,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				39E74FC51988942D00D20307 /* bj1.png in Resources */,
+				39EC8F5B1994A195004CB8A3 /* stickBg.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				39EC8F581994A195004CB8A3 /* c.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				39E74FC61988942D00D20307 /* bj2.png in Resources */,
 				39E74FC81988942D00D20307 /* XPUI_GameScene.json in Resources */,
 				39E74FEC19889F0E00D20307 /* Fill.png in Resources */,
+				39EC8F591994A195004CB8A3 /* d.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				39E74FC91988942D00D20307 /* XPUI_MainScene.json in Resources */,
+				39EC8F561994A195004CB8A3 /* a.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
+				39EC8F5A1994A195004CB8A3 /* stick.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
+				39EC8F571994A195004CB8A3 /* b.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				39E74FEA19889C5600D20307 /* GUI in Resources */,

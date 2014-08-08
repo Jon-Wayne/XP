@@ -12,19 +12,51 @@
 #include "cocos2d.h"
 using namespace cocos2d;
 
-class InputLayer : public Ref
+#define STICK_MAX_R 20.0
+
+class InputLayer : public Node
 {
 public:
+    typedef enum _InputType
+    {
+        INPUT_BEGAN,
+        INPUT_MOVED,
+        INPUT_ENDED,
+        INPUT_CANCELLED
+    } InputType;
+    
     InputLayer();
 	~InputLayer();
 
 	static InputLayer *create();
-	void init();
+	bool init();
 private:
+    void dispatch(Vec2 &pos, InputType inputType);
+    void stickHandle(Vec2 &pos, InputType inputType);
+    void buttonsHandle(Vec2 &pos, InputType inputType);
+    
+    bool onTouchBegan(Touch *touch, Event* event);
+    void onTouchMoved(Touch *touch, Event* event);
+    void onTouchEnded(Touch *touch, Event* event);
+    void onTouchCancelled(Touch *touch, Event* event);
+    
     void onTouchesBegan(const std::vector<Touch*>& touchs, Event* event);
     void onTouchesMoved(const std::vector<Touch*>& touchs, Event* event);
     void onTouchesEnded(const std::vector<Touch*>& touchs, Event* event);
     void onTouchesCancelled(const std::vector<Touch*>& touchs, Event* event);
+private:
+    EventListenerTouchOneByOne *_touchListener;
+    EventListenerTouchAllAtOnce *_multiTouchListener;
+    
+    Node   *_pnlStick;
+    Sprite *_imgStickBg;
+    Sprite *_imgStick;
+    
+    Vector<Sprite *> _btnButtons;
+    
+    Vec2 _prevPos;
+    float _orginScale;
+    Sprite *_currButton;
 };
 
 #endif /* defined(__XP__InputLayer__) */
