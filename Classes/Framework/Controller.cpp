@@ -5,8 +5,7 @@ Controller::Controller()
     _name = "Controller";
 	_scene = Scene::create();
 	_scene->retain();
-	_data = NULL;
-    _gameLayer = NULL;
+	_data = nullptr;
 }
 
 Controller::~Controller()
@@ -24,9 +23,6 @@ void Controller::dispatchEvent(std::string event, Ref *data)
 Widget *Controller::loadScene(std::string jsonFileName)
 {
 	auto scene = GUIReader::getInstance()->widgetFromJsonFile(jsonFileName.c_str());
-	
-	Scene *gameLayer = (Scene *)scene->getChildren().at(0);
-	_gameLayer = gameLayer;
     
     sceneAdpat(scene);
 	_scene->addChild(scene);
@@ -47,9 +43,11 @@ void Controller::sceneAdpat(Node *scene)
     auto x1 = glView->getFrameSize().width/(scaleY);
     auto y1 = glView->getFrameSize().height/(scaleX);
     
+    CCLOG("scaleX : %f, scaleY : %f", scaleX, scaleY);
     if (scaleX > scaleY)
     {
         CCLOG("ipad layout");
+        /*
         scene->setScaleX(scaleY/scaleX);
         auto fillBarLeft  = Sprite::createWithTexture(Director::getInstance()->getTextureCache()->addImage("Fill.png"));
 		auto fillBarRight = Sprite::createWithTexture(Director::getInstance()->getTextureCache()->addImage("Fill.png"));
@@ -68,10 +66,12 @@ void Controller::sceneAdpat(Node *scene)
         
         scene->addChild(fillBarLeft,64,64);
         scene->addChild(fillBarRight,64,63);
+         */
     }
     else if (scaleX < scaleY)
     {
         CCLOG("iphone 5 layout");
+        /*
         gameLayer->setScaleY(scaleX/scaleY);
 		Layer *UpLayer = (Layer *)gameLayer->getChildByTag(1);
         Layer *DownLayer = (Layer *)gameLayer->getChildByTag(3);
@@ -91,6 +91,7 @@ void Controller::sceneAdpat(Node *scene)
                 DownLayer->setPositionY((480-y1)/2);
             }
         }
+         */
     }
     else
     {

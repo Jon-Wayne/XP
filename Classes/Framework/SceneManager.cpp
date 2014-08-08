@@ -225,6 +225,7 @@ Controller *SceneManager::getTopScene()
     return _cntrStack.at(_size - 1);
 }
 
+
 void SceneManager::printStack()
 {
     CCLOG("==========================================================================");
@@ -243,5 +244,19 @@ void SceneManager::printStack()
         else
             CCLOG("%d\t[Name: %s]\t\t[Controller: 0x%08x]\t\t[Data: 0x%08x]", i + 1, name, (void*)controller, (void*)data);
     }
+    printChildren(_rootScene);
     CCLOG("==========================================================================");
+}
+
+void printChildren(Node *node)
+{
+    auto children = node->getChildren();
+    auto iter = children.begin();
+    
+    for (; iter != children.end(); iter++)
+    {
+        auto child = (*iter);
+        CCLOG("printChildren %s", child->getDescription().c_str());
+    }
+    
 }

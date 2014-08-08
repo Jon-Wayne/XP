@@ -29,8 +29,22 @@ void GameScene::init(Ref *data)
     
 	_btnBack->addTouchEventListener(this, SEL_TouchEvent(&GameScene::buttonEvent));
 
+    auto panel3 = (Button *)scene->getChildByName("Panel_3");
 	_gameLayer = GameLayer::create();
-	this->getScene()->addChild(_gameLayer);
+	panel3->addChild(_gameLayer);
+    
+    
+    // debug
+    CCLOG("============ GameScene::init 1");
+    printChildren(scene);
+    CCLOG("============ GameScene::init 2");
+    
+    CCLOG("top scene isEnabled, %d", scene->isEnabled());
+    CCLOG("top scene isTouchEnabled, %d", scene->isTouchEnabled());
+    
+    auto layout = (Layout *)scene->getChildByName("Panel_1");
+    CCLOG("layout isEnabled, %d", layout->isEnabled());
+    CCLOG("layout isTouchEnabled, %d", layout->isTouchEnabled());
 }
 
 std::vector<std::string> *GameScene::expectedEvents()

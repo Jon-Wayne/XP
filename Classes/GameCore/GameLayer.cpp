@@ -7,7 +7,7 @@ GameLayer::GameLayer()
 
 GameLayer::~GameLayer()
 {
-	_inputLayer->release();
+    CCLOG("~GameLayer");
 }
 
 GameLayer *GameLayer::create()
@@ -15,6 +15,7 @@ GameLayer *GameLayer::create()
 	GameLayer *ref = new GameLayer();
 	if (ref->init())
 	{
+        ref->autorelease();
 		return ref;
 	}
 	else
@@ -30,7 +31,7 @@ bool GameLayer::init()
 	if (Node::init())
 	{
 		_inputLayer = InputLayer::create();
-		_inputLayer->retain();
+        this->addChild(_inputLayer);
 		isSuccess = true;
 	}
 	

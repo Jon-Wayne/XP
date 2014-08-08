@@ -38,4 +38,6 @@ private:
     int                         _size;
 };
 
+void printChildren(Node *node);
+
 #endif //__SCENE_MANAGER_H__

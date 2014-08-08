@@ -44,15 +44,7 @@ protected:
     std::string _name;
 	Scene       *_scene;
     Ref         *_data;
-    
-    Scene       *_gameLayer;
 };
-
-
-//void PrintChildren(Widget *widget)
-//{
-//    
-//}
 
 
 
