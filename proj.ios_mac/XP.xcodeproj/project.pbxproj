@@ -22,6 +22,17 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		39A06F191998CD6100DE5952 /* Role.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39A06F171998CD6100DE5952 /* Role.cpp */; };
+		39A9D2A819A2E988003AA356 /* ItemData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D29E19A2E988003AA356 /* ItemData.cpp */; };
+		39A9D2A919A2E988003AA356 /* RoleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D2A019A2E988003AA356 /* RoleData.cpp */; };
+		39A9D2AA19A2E988003AA356 /* SkillData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D2A219A2E988003AA356 /* SkillData.cpp */; };
+		39A9D2AB19A2E988003AA356 /* StatusData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D2A419A2E988003AA356 /* StatusData.cpp */; };
+		39A9D2AC19A2E988003AA356 /* TaskData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39A9D2A619A2E988003AA356 /* TaskData.cpp */; };
+		39BA103519A1CFAA00987B43 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39BA102D19A1CFAA00987B43 /* Item.cpp */; };
+		39BA103619A1CFAA00987B43 /* Skill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39BA102F19A1CFAA00987B43 /* Skill.cpp */; };
+		39BA103719A1CFAA00987B43 /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39BA103119A1CFAA00987B43 /* Status.cpp */; };
+		39BA103819A1CFAA00987B43 /* Task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39BA103319A1CFAA00987B43 /* Task.cpp */; };
+		39BA103B19A1E1BF00987B43 /* RoleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39BA103919A1E1BF00987B43 /* RoleManager.cpp */; };
 		39E74FC51988942D00D20307 /* bj1.png in Resources */ = {isa = PBXBuildFile; fileRef = 39E74FBF1988942D00D20307 /* bj1.png */; };
 		39E74FC61988942D00D20307 /* bj2.png in Resources */ = {isa = PBXBuildFile; fileRef = 39E74FC01988942D00D20307 /* bj2.png */; };
 		39E74FC81988942D00D20307 /* XPUI_GameScene.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E74FC31988942D00D20307 /* XPUI_GameScene.json */; };
@@ -42,6 +53,7 @@
 		39EC8F591994A195004CB8A3 /* d.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EC8F531994A195004CB8A3 /* d.png */; };
 		39EC8F5A1994A195004CB8A3 /* stick.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EC8F541994A195004CB8A3 /* stick.png */; };
 		39EC8F5B1994A195004CB8A3 /* stickBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EC8F551994A195004CB8A3 /* stickBg.png */; };
+		39EF5CBF1995CD8D0058519D /* WorldLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39EF5CBD1995CD8D0058519D /* WorldLayer.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -239,6 +251,30 @@
 		1D6058910D05DD3D006BFB54 /* XP iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XP iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		39A06F171998CD6100DE5952 /* Role.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Role.cpp; sourceTree = "<group>"; };
+		39A06F181998CD6100DE5952 /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
+		39A5AF03199A1760000C81D5 /* type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = type.h; path = ../Classes/type.h; sourceTree = "<group>"; };
+		39A9D29E19A2E988003AA356 /* ItemData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ItemData.cpp; sourceTree = "<group>"; };
+		39A9D29F19A2E988003AA356 /* ItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemData.h; sourceTree = "<group>"; };
+		39A9D2A019A2E988003AA356 /* RoleData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoleData.cpp; sourceTree = "<group>"; };
+		39A9D2A119A2E988003AA356 /* RoleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleData.h; sourceTree = "<group>"; };
+		39A9D2A219A2E988003AA356 /* SkillData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkillData.cpp; sourceTree = "<group>"; };
+		39A9D2A319A2E988003AA356 /* SkillData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillData.h; sourceTree = "<group>"; };
+		39A9D2A419A2E988003AA356 /* StatusData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatusData.cpp; sourceTree = "<group>"; };
+		39A9D2A519A2E988003AA356 /* StatusData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusData.h; sourceTree = "<group>"; };
+		39A9D2A619A2E988003AA356 /* TaskData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TaskData.cpp; sourceTree = "<group>"; };
+		39A9D2A719A2E988003AA356 /* TaskData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskData.h; sourceTree = "<group>"; };
+		39B3A8CD1996065200853C09 /* InputProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputProtocol.h; sourceTree = "<group>"; };
+		39BA102D19A1CFAA00987B43 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Item.cpp; sourceTree = "<group>"; };
+		39BA102E19A1CFAA00987B43 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		39BA102F19A1CFAA00987B43 /* Skill.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skill.cpp; sourceTree = "<group>"; };
+		39BA103019A1CFAA00987B43 /* Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skill.h; sourceTree = "<group>"; };
+		39BA103119A1CFAA00987B43 /* Status.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Status.cpp; sourceTree = "<group>"; };
+		39BA103219A1CFAA00987B43 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		39BA103319A1CFAA00987B43 /* Task.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Task.cpp; sourceTree = "<group>"; };
+		39BA103419A1CFAA00987B43 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		39BA103919A1E1BF00987B43 /* RoleManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoleManager.cpp; sourceTree = "<group>"; };
+		39BA103A19A1E1BF00987B43 /* RoleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleManager.h; sourceTree = "<group>"; };
 		39E74FBF1988942D00D20307 /* bj1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bj1.png; sourceTree = "<group>"; };
 		39E74FC01988942D00D20307 /* bj2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bj2.png; sourceTree = "<group>"; };
 		39E74FC31988942D00D20307 /* XPUI_GameScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XPUI_GameScene.json; sourceTree = "<group>"; };
@@ -271,6 +307,8 @@
 		39EC8F531994A195004CB8A3 /* d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = d.png; sourceTree = "<group>"; };
 		39EC8F541994A195004CB8A3 /* stick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick.png; sourceTree = "<group>"; };
 		39EC8F551994A195004CB8A3 /* stickBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickBg.png; sourceTree = "<group>"; };
+		39EF5CBD1995CD8D0058519D /* WorldLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldLayer.cpp; sourceTree = "<group>"; };
+		39EF5CBE1995CD8D0058519D /* WorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldLayer.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -379,8 +417,10 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				39A5AF03199A1760000C81D5 /* type.h */,
 				39E74FCA1988944C00D20307 /* Framework */,
 				39E74FD51988944C00D20307 /* GameCore */,
+				39A06F161998CD6100DE5952 /* Model */,
 				39E74FDA1988944C00D20307 /* Scene */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
@@ -453,6 +493,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		39A06F161998CD6100DE5952 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				39BA102D19A1CFAA00987B43 /* Item.cpp */,
+				39BA102E19A1CFAA00987B43 /* Item.h */,
+				39A9D29E19A2E988003AA356 /* ItemData.cpp */,
+				39A9D29F19A2E988003AA356 /* ItemData.h */,
+				39A06F171998CD6100DE5952 /* Role.cpp */,
+				39A06F181998CD6100DE5952 /* Role.h */,
+				39A9D2A019A2E988003AA356 /* RoleData.cpp */,
+				39A9D2A119A2E988003AA356 /* RoleData.h */,
+				39BA102F19A1CFAA00987B43 /* Skill.cpp */,
+				39BA103019A1CFAA00987B43 /* Skill.h */,
+				39A9D2A219A2E988003AA356 /* SkillData.cpp */,
+				39A9D2A319A2E988003AA356 /* SkillData.h */,
+				39BA103119A1CFAA00987B43 /* Status.cpp */,
+				39BA103219A1CFAA00987B43 /* Status.h */,
+				39A9D2A419A2E988003AA356 /* StatusData.cpp */,
+				39A9D2A519A2E988003AA356 /* StatusData.h */,
+				39BA103319A1CFAA00987B43 /* Task.cpp */,
+				39BA103419A1CFAA00987B43 /* Task.h */,
+				39A9D2A619A2E988003AA356 /* TaskData.cpp */,
+				39A9D2A719A2E988003AA356 /* TaskData.h */,
+			);
+			name = Model;
+			path = ../Classes/Model;
+			sourceTree = "<group>";
+		};
 		39E74FCA1988944C00D20307 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,8 +544,13 @@
 			children = (
 				39E74FD61988944C00D20307 /* GameLayer.cpp */,
 				39E74FD71988944C00D20307 /* GameLayer.h */,
+				39EF5CBD1995CD8D0058519D /* WorldLayer.cpp */,
+				39EF5CBE1995CD8D0058519D /* WorldLayer.h */,
+				39B3A8CD1996065200853C09 /* InputProtocol.h */,
 				39E74FD81988944C00D20307 /* InputLayer.cpp */,
 				39E74FD91988944C00D20307 /* InputLayer.h */,
+				39BA103919A1E1BF00987B43 /* RoleManager.cpp */,
+				39BA103A19A1E1BF00987B43 /* RoleManager.h */,
 			);
 			name = GameCore;
 			path = ../Classes/GameCore;
@@ -767,18 +840,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A9D2AA19A2E988003AA356 /* SkillData.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				39BA103619A1CFAA00987B43 /* Skill.cpp in Sources */,
 				39E74FE11988944C00D20307 /* Controller.cpp in Sources */,
 				39E74FE61988944C00D20307 /* InputLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				39A9D2A919A2E988003AA356 /* RoleData.cpp in Sources */,
+				39BA103B19A1E1BF00987B43 /* RoleManager.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				39E74FE21988944C00D20307 /* ControllerFactory.cpp in Sources */,
 				39E74FE51988944C00D20307 /* GameLayer.cpp in Sources */,
 				39E74FE41988944C00D20307 /* SceneManager.cpp in Sources */,
+				39BA103519A1CFAA00987B43 /* Item.cpp in Sources */,
+				39A06F191998CD6100DE5952 /* Role.cpp in Sources */,
+				39BA103819A1CFAA00987B43 /* Task.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				39E74FE31988944C00D20307 /* EventManager.cpp in Sources */,
+				39EF5CBF1995CD8D0058519D /* WorldLayer.cpp in Sources */,
 				39E74FE71988944C00D20307 /* GameScene.cpp in Sources */,
+				39A9D2AC19A2E988003AA356 /* TaskData.cpp in Sources */,
+				39BA103719A1CFAA00987B43 /* Status.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
+				39A9D2AB19A2E988003AA356 /* StatusData.cpp in Sources */,
+				39A9D2A819A2E988003AA356 /* ItemData.cpp in Sources */,
 				39E74FE81988944C00D20307 /* MainScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
