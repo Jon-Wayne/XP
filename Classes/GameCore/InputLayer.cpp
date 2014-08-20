@@ -3,7 +3,8 @@
 InputLayer::InputLayer():
 _touchListener(nullptr),
 _multiTouchListener(nullptr),
-_currButton(nullptr)
+_currButton(nullptr),
+_target(nullptr)
 {
 
 }
@@ -130,7 +131,7 @@ void InputLayer::stickHandle(Vec2 &pos, InputType inputType)
             auto moveDegree = MATH_RAD_TO_DEG(moveAngle);
             auto moveLength = moveVector.getLength();
             
-            CCLOG("moveDegree : %f     moveLength : %f", moveDegree, moveLength);
+            //CCLOG("moveDegree : %f     moveLength : %f", moveDegree, moveLength);
             if (moveLength > STICK_MAX_R)
             {
                 auto rate = STICK_MAX_R / moveLength;
@@ -140,6 +141,26 @@ void InputLayer::stickHandle(Vec2 &pos, InputType inputType)
             auto oldPos = _imgStick->getPosition();
             _imgStick->setPosition(moveVector);
             
+            if (_target)
+            {
+                if (moveDegree >= -45 && moveDegree < 45)
+                {
+                    _target->right();
+                }
+                else if (moveDegree >= 45 && moveDegree < 135)
+                {
+                    _target->up();
+                }
+                else if (moveDegree >= -135 && moveDegree < -45)
+                {
+                    _target->down();
+                }
+                else
+                {
+                    _target->left();
+                }
+            }
+            
             break;
         }
         case INPUT_ENDED:
@@ -147,6 +168,11 @@ void InputLayer::stickHandle(Vec2 &pos, InputType inputType)
             _imgStickBg->runAction(FadeOut::create(0.3));
             _imgStick->runAction(FadeOut::create(0.3));
             _imgStick->setPosition(Vec2::ZERO);
+            
+            if (_target)
+            {
+                _target->none();
+            }
             break;
         }
         case INPUT_CANCELLED:
@@ -154,6 +180,11 @@ void InputLayer::stickHandle(Vec2 &pos, InputType inputType)
             _imgStickBg->runAction(FadeOut::create(0.3));
             _imgStick->runAction(FadeOut::create(0.3));
             _imgStick->setPosition(Vec2::ZERO);
+            
+            if (_target)
+            {
+                _target->none();
+            }
             break;
         }
         default:
@@ -184,13 +215,18 @@ void InputLayer::buttonsHandle(Vec2 &pos, InputType inputType)
     
     if (_currButton)
     {
-        CCLOG("_currButton tag : %d", _currButton->getTag());
+        auto index = _currButton->getTag();
+        CCLOG("_currButton tag : %d", index);
         
         switch (inputType)
         {
             case INPUT_BEGAN:
             {
                 _currButton->runAction(ScaleTo::create(0.1, _orginScale + 0.2));
+                if (_target)
+                {
+                    _target->buttons(index, InputProtocol::ButtonPress);
+                }
                 break;
             }
             case INPUT_MOVED:
@@ -201,6 +237,10 @@ void InputLayer::buttonsHandle(Vec2 &pos, InputType inputType)
             case INPUT_ENDED:
             {
                 _currButton->runAction(ScaleTo::create(0.1, _orginScale));
+                if (_target)
+                {
+                    _target->buttons(index, InputProtocol::ButtonRelease);
+                }
                 break;
             }
             case INPUT_CANCELLED:

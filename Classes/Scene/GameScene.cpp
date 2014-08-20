@@ -23,10 +23,12 @@ GameScene::~GameScene()
 void GameScene::init(Ref *data)
 {
     _name = GAME_SCENE;
-    auto scene = loadScene("XPUI_GameScene.json");
+    auto scene = (Layout *)loadScene("XPUI_GameScene.json");
+    scene->removeBackGroundImage();
     
     _btnBack   = (Button *)scene->getChildByName("Panel_1")->getChildByName("btnBack");
     
+    _btnBack->setPositionY(300);
 	_btnBack->addTouchEventListener(this, SEL_TouchEvent(&GameScene::buttonEvent));
 
     auto panel3 = (Button *)scene->getChildByName("Panel_3");

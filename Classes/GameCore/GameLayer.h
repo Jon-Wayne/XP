@@ -1,5 +1,5 @@
 //
-//  InputLayer.h
+//  GameLayer.h
 //  XP
 //
 //  Created by Jon Wayne on 14-7-3.
@@ -13,6 +13,7 @@
 using namespace cocos2d;
 
 #include "InputLayer.h"
+#include "WorldLayer.h"
 
 class GameLayer : public Node
 {
@@ -23,7 +24,10 @@ public:
 	static GameLayer *create();
 	virtual bool init();
 private:
+    WorldLayer *_worldLayer;
     InputLayer *_inputLayer;
+    
+    
 };
 
 #endif /* defined(__XP__GameLayer__) */

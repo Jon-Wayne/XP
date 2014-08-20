@@ -1,5 +1,7 @@
 #include "GameLayer.h"
 
+#include "RoleManager.h"
+
 GameLayer::GameLayer()
 {
 
@@ -30,8 +32,16 @@ bool GameLayer::init()
 	bool isSuccess = false;
 	if (Node::init())
 	{
+        _worldLayer = WorldLayer::create();
+        this->addChild(_worldLayer);
+        
 		_inputLayer = InputLayer::create();
+        _inputLayer->setTarget(_worldLayer);
         this->addChild(_inputLayer);
+        
+        auto rm = RoleManager::getInstance();
+        rm->setTarget(_worldLayer->getWorld());
+        
 		isSuccess = true;
 	}
 	

@@ -12,6 +12,8 @@
 #include "cocos2d.h"
 using namespace cocos2d;
 
+#include "InputProtocol.h"
+
 #define STICK_MAX_R 20.0
 
 class InputLayer : public Node
@@ -30,6 +32,9 @@ public:
 
 	static InputLayer *create();
 	bool init();
+    
+    void setTarget(InputProtocol *target){ _target = target; }
+    InputProtocol * getTarget(){ return _target; }
 private:
     void dispatch(Vec2 &pos, InputType inputType);
     void stickHandle(Vec2 &pos, InputType inputType);
@@ -57,6 +62,8 @@ private:
     Vec2 _prevPos;
     float _orginScale;
     Sprite *_currButton;
+    
+    InputProtocol *_target;
 };
 
 #endif /* defined(__XP__InputLayer__) */
