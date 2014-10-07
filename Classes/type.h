@@ -40,4 +40,14 @@ typedef     unsigned short      UTF16;
 typedef     unsigned int        UTF32;
 typedef     std::string         STR;
 
+
+
+/*
+ *  base physical data type
+ */
+struct _stPhy
+{
+    
+};
+
 #endif /* defined(__XP__type__) */

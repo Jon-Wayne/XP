@@ -37,15 +37,17 @@ bool RoleManager::init()
     return true;
 }
 
-void RoleManager::addRole(Role *role)
+Role *RoleManager::addRole(Role *role)
 {
     _roles.pushBack(role);
     
     _target->addChild(role->getSprite());
+    
+    return role;
 }
 
-void RoleManager::addRole(U32 dataId)
+Role *RoleManager::addRole(U32 dataId)
 {
     auto role = Role::create(dataId);
-    addRole(role);
+    return addRole(role);
 }

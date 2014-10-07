@@ -1,6 +1,8 @@
 #include "Role.h"
 
-Role::Role()
+Role::Role():
+_sprite(nullptr),
+_data(nullptr)
 {
     
 }
@@ -28,14 +30,14 @@ Role *Role::create()
     }
 }
 
-static Role *create(RoleData *data)
+Role *Role::create(RoleData *data)
 {
     auto ref = Role::create();
     ref->init(data);
     return ref;
 }
 
-static Role *create(U32 dataId)
+Role *Role::create(U32 dataId)
 {
     auto ref = Role::create();
     ref->init(dataId);
@@ -44,13 +46,25 @@ static Role *create(U32 dataId)
 
 bool Role::init()
 {
-    return init(nullptr);
+    _sprite = Sprite::create("a.png");
+    _sprite->retain();
+    
+    return true;
 }
 
 bool Role::init(RoleData *data)
 {
-    _sprite = Sprite::create();
-    _sprite->retain();
+    init();
+    
+    if (!data) return true;
+    
+    auto bdPlayer = PhysicsBody::createBox(Size(_sprite->getContentSize()));
+    bdPlayer->setVelocityLimit(data->data.velocityLimit);
+    bdPlayer->getFirstShape()->setRestitution(0.0);
+    bdPlayer->setRotationEnable(data->data.isCanRotate);
+    
+    _sprite->setPhysicsBody(bdPlayer);
+    _sprite->setPosition(Vec2(240, 160));
     
     setData(data);
     

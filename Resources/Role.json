@@ -1,0 +1,8 @@
+[["dataId","type","sex","name","status","icon","picture","animation","physics","isCanRotate","velocityLimit"]
+,["U32","U8","U8","STR","U32","STR","STR","STR","STR","B8","F32"]
+,[1001,1,1,"大大",0,"null","null","null","null",0,200]
+,[1002,2,2,"123",0,"null","null","null","null",0,200]
+,[1003,2,1,"ddd",0,"null","null","null","null",1,200]
+,[1004,2,1,"cd大大",0,"null","null","null","null",1,200]
+,[1005,2,2,"acb123",0,"null","null","null","null",1,200]
+]

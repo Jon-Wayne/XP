@@ -42,6 +42,14 @@ bool GameLayer::init()
         auto rm = RoleManager::getInstance();
         rm->setTarget(_worldLayer->getWorld());
         
+        // temporary
+        auto playerSprite = RoleManager::getInstance()->addRole(1001);
+        _worldLayer->setControlRole(playerSprite);
+        
+//        RoleManager::getInstance()->addRole(1002);
+//        
+//        RoleManager::getInstance()->addRole(1003);
+        
 		isSuccess = true;
 	}
 	

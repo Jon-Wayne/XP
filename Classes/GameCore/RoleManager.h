@@ -26,8 +26,11 @@ public:
     void setTarget(Node *target){ _target = target; }
     Node *getTarget(){ return _target; }
     
-    void addRole(Role *role);
-    void addRole(U32 dataId);
+    Role *addRole(Role *role);
+    Role *addRole(U32 dataId);
+    bool removeRole(Role *role);
+    
+    
 private:
     
 private:

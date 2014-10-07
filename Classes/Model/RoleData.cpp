@@ -1,5 +1,7 @@
 #include "RoleData.h"
 
+#include "DataManager.h"
+
 RoleData::RoleData()
 {
     
@@ -26,7 +28,7 @@ RoleData *RoleData::create()
     }
 }
 
-static RoleData *create(U32 dataId)
+RoleData *RoleData::create(U32 dataId)
 {
     auto ref = RoleData::create();
     ref->init(dataId);
@@ -41,6 +43,24 @@ bool RoleData::init()
 
 bool RoleData::init(U32 dataId)
 {
+    if (dataId == 0) return true;
+    
+    auto dm = DataManager::getInstance();
+    auto dataItem = dm->getDataItem("Role", dataId);
+    if (!dataItem) return true;
+    
+    U8 index = -1;
+    data.dataId = dataId;
+    data.type = (RoleType)dataItem->at(++index).asByte();
+    data.sex = (SexType)dataItem->at(++index).asByte();
+    data.name = dataItem->at(++index).asString();
+    data.status = (U32)dataItem->at(++index).asInt();
+    data.icon = dataItem->at(++index).asString();
+    data.picture = dataItem->at(++index).asString();
+    data.animation = dataItem->at(++index).asString();
+    data.physics = dataItem->at(++index).asString();
+    data.isCanRotate = dataItem->at(++index).asBool();
+    data.velocityLimit = dataItem->at(++index).asFloat();
     
     return true;
 }

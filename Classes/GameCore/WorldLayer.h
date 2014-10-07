@@ -9,10 +9,13 @@
 #ifndef __XP__WorldLayer__
 #define __XP__WorldLayer__
 
+#define PLAYER_MOVE_FORCE 1000000
+
 #include "cocos2d.h"
 using namespace cocos2d;
 
 #include "InputProtocol.h"
+#include "RoleManager.h"
 
 class WorldLayer : public Node, public InputProtocol
 {
@@ -33,11 +36,16 @@ public:
     void checkInput(float delta);
     
     Scene *getWorld(){ return _world; }
+    void setControlRole(Role *controlRole);
 private:
-    Scene   *_world;
-    Sprite  *_player;
+    Scene   *_world;    //  physical world and parent node of all body nodes
+    
+    Role    *_controlRole;
+    Sprite  *_player;   //  player body node renference
+    int     _playerMoveForceDir;
     
     bool _isDebug;
+    int _oldContinueInput;
     int _continueInput;
 };
 

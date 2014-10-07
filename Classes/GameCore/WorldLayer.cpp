@@ -1,7 +1,11 @@
 #include "WorldLayer.h"
 
 WorldLayer::WorldLayer():
+_world(nullptr),
+_player(nullptr),
+_playerMoveForceDir(0),
 _isDebug(false),
+_oldContinueInput(0),
 _continueInput(0)
 {
 
@@ -46,16 +50,6 @@ bool WorldLayer::init()
         ndFrame->setPhysicsBody(bdFrame);
         _world->addChild(ndFrame);
         
-        _player = Sprite::create("a.png");
-        auto bdPlayer = PhysicsBody::createBox(Size(_player->getContentSize()));
-        //auto bdPlayer = PhysicsBody::createCircle(_player->getContentSize().width/2.0);
-        bdPlayer->setVelocityLimit(200);
-        bdPlayer->getFirstShape()->setRestitution(0.0);
-        bdPlayer->setRotationEnable(false);
-        _player->setPhysicsBody(bdPlayer);
-        _player->setPosition(Vec2(240, 160));
-        _world->addChild(_player);
-        
         addChild(_world);
         
         auto sche = Director::getInstance()->getScheduler();
@@ -67,34 +61,92 @@ bool WorldLayer::init()
 	return isSuccess;
 }
 
+void WorldLayer::setControlRole(Role *controlRole)
+{
+    if (controlRole)
+    {
+        _controlRole = controlRole;
+        _player = _controlRole->getSprite();
+    }
+    else
+    {
+        _controlRole = nullptr;
+        _player = nullptr;
+    }
+}
+
 void WorldLayer::checkInput(float delta)
 {
+    if (!_controlRole || !_player) return;
+    
     auto bdPlayer = _player->getPhysicsBody();
     auto velocity = bdPlayer->getVelocity();
     auto absVolicity = fabsf(velocity.x);
     
-    bdPlayer->resetForces();
+    //bdPlayer->resetForces();
+    
+//    CCLOG("_oldContinueInput _continueInput %d, %d", _oldContinueInput, _continueInput);
     
     //CCLOG("_continueInput : %d", _continueInput);
     if (_continueInput == 0)
     {
-        
+        if (_playerMoveForceDir == 3)
+        {
+            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0));
+        }
+        else if (_playerMoveForceDir == 4)
+        {
+            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0));
+        }
+        _playerMoveForceDir = 0;
     }
     else if (_continueInput == 1)
     {
-        
+        if (_playerMoveForceDir == 3)
+        {
+            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0));
+        }
+        else if (_playerMoveForceDir == 4)
+        {
+            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0));
+        }
+        _playerMoveForceDir = 0;
     }
     else if (_continueInput == 2)
     {
-        
+        if (_playerMoveForceDir == 3)
+        {
+            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0));
+        }
+        else if (_playerMoveForceDir == 4)
+        {
+            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0));
+        }
+        _playerMoveForceDir = 0;
     }
     else if (_continueInput == 3)
     {
-        bdPlayer->applyForce(Vec2(-1000000, 0));
+        if (_playerMoveForceDir != 3)
+        {
+            if (_playerMoveForceDir == 4)
+            {
+                bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0));
+            }
+            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0));
+        }
+        _playerMoveForceDir = 3;
     }
     else if (_continueInput == 4)
     {
-        bdPlayer->applyForce(Vec2(1000000, 0));
+        if (_playerMoveForceDir != 4)
+        {
+            if (_playerMoveForceDir == 3)
+            {
+                bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0));
+            }
+            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0));
+        }
+        _playerMoveForceDir = 4;
     }
 }
 
@@ -129,6 +181,8 @@ void WorldLayer::none()
 
 void WorldLayer::buttons(int index, ButtonStatus buttonStatus)
 {
+    if (!_controlRole || !_player) return;
+    
     if (buttonStatus == InputProtocol::ButtonPress)
     {
         CCLOG("buttons press : %d", index);

@@ -46,33 +46,38 @@ struct stRoleData
     RoleType    type;
     SexType     sex;
     STR         name;
-    U32         skills[SKILL_MAX_NUM];  // not sure if this is needed.
-    U32         itemsId[ITEM_MAX_NUM];  // not sure if this is needed.
+    U32         status;
     
     /*
      *  view
      */
-    STR         icon;           // icon of the role, is avatar generally.
-    STR         picture;        // static original painting.
-    STR         animation;      // the prefix of animation name, there is a naming rule to all kinds of animation of the role.
-    STR         height;
-    STR         Radian;
+    STR         icon;           // .plist file name. icon of the role, is avatar generally.
+    STR         picture;        // .plist file name. static original painting.
+    STR         animation;      // .ani file name. the prefix of animation name, there is a naming rule to all kinds of animation of the role.
     
     /*
      *  physic
      */
+    STR         physics;        // .plist file name. exportted from PE.
+    B8          isCanRotate;
+    F32         velocityLimit;
+    
+    // not sure if those are needed.
     F32         mass;
     F32         width;
     F32         radian;
-    B8          isCanRotate;
     U8          group;
     F32         density;
     F32         restitution;
     F32         friction;
     
+    
     stRoleData():
     dataId(0),
-    type()
+    type(RoleTypeStatic),
+    physics(""),
+    isCanRotate(true),
+    velocityLimit(INFINITY)
     {}
 };
 
@@ -90,7 +95,7 @@ public:
     
     void incode();
     void decode();
-private:
+public:
     stRoleData data;
 };
 

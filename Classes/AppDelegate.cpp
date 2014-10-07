@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "SceneInit.h"
+#include "DataManager.h"
 
 USING_NS_CC;
 
@@ -30,6 +31,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 	//FileUtils::getInstance()->addSearchPath("");
 
+    std::string jsonTable("Role");
+    std::string jsonFile("Role.json");
+    DataManager::getInstance()->readTableFromDataFile(jsonTable, jsonFile);
+    CCLOG("!!!!! print table :");
+    DataManager::getInstance()->printTable(jsonTable);
+    
 	SceneInit();
 
     return true;

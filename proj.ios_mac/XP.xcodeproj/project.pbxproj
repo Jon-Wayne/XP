@@ -32,6 +32,7 @@
 		39BA103719A1CFAA00987B43 /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39BA103119A1CFAA00987B43 /* Status.cpp */; };
 		39BA103819A1CFAA00987B43 /* Task.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39BA103319A1CFAA00987B43 /* Task.cpp */; };
 		39BA103B19A1E1BF00987B43 /* RoleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39BA103919A1E1BF00987B43 /* RoleManager.cpp */; };
+		39E22E0519A72CE500C30279 /* Role.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E22E0419A72CE500C30279 /* Role.json */; };
 		39E74FC51988942D00D20307 /* bj1.png in Resources */ = {isa = PBXBuildFile; fileRef = 39E74FBF1988942D00D20307 /* bj1.png */; };
 		39E74FC61988942D00D20307 /* bj2.png in Resources */ = {isa = PBXBuildFile; fileRef = 39E74FC01988942D00D20307 /* bj2.png */; };
 		39E74FC81988942D00D20307 /* XPUI_GameScene.json in Resources */ = {isa = PBXBuildFile; fileRef = 39E74FC31988942D00D20307 /* XPUI_GameScene.json */; };
@@ -53,6 +54,7 @@
 		39EC8F5A1994A195004CB8A3 /* stick.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EC8F541994A195004CB8A3 /* stick.png */; };
 		39EC8F5B1994A195004CB8A3 /* stickBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 39EC8F551994A195004CB8A3 /* stickBg.png */; };
 		39EF5CBF1995CD8D0058519D /* WorldLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39EF5CBD1995CD8D0058519D /* WorldLayer.cpp */; };
+		39F46F4E19A5E29A00C654C1 /* DataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39F46F4C19A5E29A00C654C1 /* DataManager.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -271,6 +273,7 @@
 		39BA103419A1CFAA00987B43 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		39BA103919A1E1BF00987B43 /* RoleManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RoleManager.cpp; sourceTree = "<group>"; };
 		39BA103A19A1E1BF00987B43 /* RoleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoleManager.h; sourceTree = "<group>"; };
+		39E22E0419A72CE500C30279 /* Role.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Role.json; sourceTree = "<group>"; };
 		39E74FBF1988942D00D20307 /* bj1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bj1.png; sourceTree = "<group>"; };
 		39E74FC01988942D00D20307 /* bj2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bj2.png; sourceTree = "<group>"; };
 		39E74FC31988942D00D20307 /* XPUI_GameScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = XPUI_GameScene.json; sourceTree = "<group>"; };
@@ -305,6 +308,8 @@
 		39EC8F551994A195004CB8A3 /* stickBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickBg.png; sourceTree = "<group>"; };
 		39EF5CBD1995CD8D0058519D /* WorldLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldLayer.cpp; sourceTree = "<group>"; };
 		39EF5CBE1995CD8D0058519D /* WorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldLayer.h; sourceTree = "<group>"; };
+		39F46F4C19A5E29A00C654C1 /* DataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataManager.cpp; sourceTree = "<group>"; };
+		39F46F4D19A5E29A00C654C1 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -545,6 +550,8 @@
 				39E74FD91988944C00D20307 /* InputLayer.h */,
 				39BA103919A1E1BF00987B43 /* RoleManager.cpp */,
 				39BA103A19A1E1BF00987B43 /* RoleManager.h */,
+				39F46F4C19A5E29A00C654C1 /* DataManager.cpp */,
+				39F46F4D19A5E29A00C654C1 /* DataManager.h */,
 			);
 			name = GameCore;
 			path = ../Classes/GameCore;
@@ -612,6 +619,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				39E22E0419A72CE500C30279 /* Role.json */,
 				39EC8F501994A195004CB8A3 /* a.png */,
 				39EC8F511994A195004CB8A3 /* b.png */,
 				39EC8F521994A195004CB8A3 /* c.png */,
@@ -805,6 +813,7 @@
 				39EC8F561994A195004CB8A3 /* a.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				39E22E0519A72CE500C30279 /* Role.json in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
@@ -835,6 +844,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A9D2AA19A2E988003AA356 /* SkillData.cpp in Sources */,
+				39F46F4E19A5E29A00C654C1 /* DataManager.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				39BA103619A1CFAA00987B43 /* Skill.cpp in Sources */,
 				39E74FE11988944C00D20307 /* Controller.cpp in Sources */,
@@ -951,6 +961,7 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
