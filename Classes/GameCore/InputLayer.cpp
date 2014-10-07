@@ -177,6 +177,7 @@ void InputLayer::stickHandle(Vec2 &pos, InputType inputType)
         }
         case INPUT_CANCELLED:
         {
+            /*
             _imgStickBg->runAction(FadeOut::create(0.3));
             _imgStick->runAction(FadeOut::create(0.3));
             _imgStick->setPosition(Vec2::ZERO);
@@ -185,6 +186,7 @@ void InputLayer::stickHandle(Vec2 &pos, InputType inputType)
             {
                 _target->none();
             }
+             */
             break;
         }
         default:
