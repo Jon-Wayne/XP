@@ -3,7 +3,7 @@
 WorldLayer::WorldLayer():
 _world(nullptr),
 _player(nullptr),
-_playerMoveForceDir(0),
+_playerForce(Vec2::ZERO),
 _isDebug(false),
 _oldContinueInput(0),
 _continueInput(0)
@@ -80,6 +80,7 @@ void WorldLayer::checkInput(float delta)
     if (!_controlRole || !_player) return;
     
     auto bdPlayer = _player->getPhysicsBody();
+    
     auto velocity = bdPlayer->getVelocity();
     auto absVolicity = fabsf(velocity.x);
     
@@ -90,64 +91,138 @@ void WorldLayer::checkInput(float delta)
     //CCLOG("_continueInput : %d", _continueInput);
     if (_continueInput == 0)
     {
-        if (_playerMoveForceDir == 3)
+        if (_playerForce.x == -PLAYER_START_FORCE)
         {
-            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0));
+            bdPlayer->applyForce(Vec2(PLAYER_START_FORCE, 0.0f));
         }
-        else if (_playerMoveForceDir == 4)
+        else if (_playerForce.x == -PLAYER_MOVE_FORCE)
         {
-            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0));
+            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0.0f));
         }
-        _playerMoveForceDir = 0;
+        else if (_playerForce.x == PLAYER_START_FORCE)
+        {
+            bdPlayer->applyForce(Vec2(-PLAYER_START_FORCE, 0.0f));
+        }
+        else if (_playerForce.x == PLAYER_MOVE_FORCE)
+        {
+            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0.0f));
+        }
+        _playerForce.x = 0.0f;
     }
+    // Up
     else if (_continueInput == 1)
     {
-        if (_playerMoveForceDir == 3)
+        if (_playerForce.x == -PLAYER_START_FORCE)
         {
-            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0));
+            bdPlayer->applyForce(Vec2(PLAYER_START_FORCE, 0.0f));
         }
-        else if (_playerMoveForceDir == 4)
+        else if (_playerForce.x == -PLAYER_MOVE_FORCE)
         {
-            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0));
+            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0.0f));
         }
-        _playerMoveForceDir = 0;
+        else if (_playerForce.x == PLAYER_START_FORCE)
+        {
+            bdPlayer->applyForce(Vec2(-PLAYER_START_FORCE, 0.0f));
+        }
+        else if (_playerForce.x == PLAYER_MOVE_FORCE)
+        {
+            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0.0f));
+        }
+        _playerForce.x = 0.0f;
     }
+    // Down
     else if (_continueInput == 2)
     {
-        if (_playerMoveForceDir == 3)
+        if (_playerForce.x == -PLAYER_START_FORCE)
         {
-            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0));
+            bdPlayer->applyForce(Vec2(PLAYER_START_FORCE, 0.0f));
         }
-        else if (_playerMoveForceDir == 4)
+        else if (_playerForce.x == -PLAYER_MOVE_FORCE)
         {
-            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0));
+            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0.0f));
         }
-        _playerMoveForceDir = 0;
+        else if (_playerForce.x == PLAYER_START_FORCE)
+        {
+            bdPlayer->applyForce(Vec2(-PLAYER_START_FORCE, 0.0f));
+        }
+        else if (_playerForce.x == PLAYER_MOVE_FORCE)
+        {
+            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0.0f));
+        }
+        _playerForce.x = 0.0f;
     }
+    // Left
     else if (_continueInput == 3)
     {
-        if (_playerMoveForceDir != 3)
+        if (_playerForce.x == 0.0f)
         {
-            if (_playerMoveForceDir == 4)
-            {
-                bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0));
-            }
-            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0));
+            bdPlayer->applyForce(Vec2(-PLAYER_START_FORCE, 0.0f));
+            _playerForce.x = -PLAYER_START_FORCE;
         }
-        _playerMoveForceDir = 3;
+        else if (_playerForce.x == PLAYER_START_FORCE)
+        {
+            bdPlayer->applyForce(Vec2(-PLAYER_START_FORCE, 0.0f));
+            bdPlayer->applyForce(Vec2(-PLAYER_START_FORCE, 0.0f));
+            _playerForce.x = -PLAYER_START_FORCE;
+        }
+        else if (_playerForce.x == PLAYER_MOVE_FORCE)
+        {
+            bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0.0f));
+            bdPlayer->applyForce(Vec2(-PLAYER_START_FORCE, 0.0f));
+            _playerForce.x = -PLAYER_START_FORCE;
+        }
+        else if (_playerForce.x == -PLAYER_START_FORCE)
+        {
+            if (velocity.x < -300.0f)
+            {
+                CCLOG("-300.0f");
+                bdPlayer->applyForce(Vec2(PLAYER_START_FORCE, 0.0f));
+                bdPlayer->applyForce(Vec2(-PLAYER_MOVE_FORCE, 0.0f));
+                _playerForce.x = -PLAYER_MOVE_FORCE;
+            }
+        }
+        else if (_playerForce.x == -PLAYER_MOVE_FORCE)
+        {
+            
+        }
     }
+    // Right
     else if (_continueInput == 4)
     {
-        if (_playerMoveForceDir != 4)
+        if (_playerForce.x == 0.0f)
         {
-            if (_playerMoveForceDir == 3)
-            {
-                bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0));
-            }
-            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0));
+            bdPlayer->applyForce(Vec2(PLAYER_START_FORCE, 0.0f));
+            _playerForce.x = PLAYER_START_FORCE;
         }
-        _playerMoveForceDir = 4;
+        else if (_playerForce.x == -PLAYER_START_FORCE)
+        {
+            bdPlayer->applyForce(Vec2(PLAYER_START_FORCE, 0.0f));
+            bdPlayer->applyForce(Vec2(PLAYER_START_FORCE, 0.0f));
+            _playerForce.x = PLAYER_START_FORCE;
+        }
+        else if (_playerForce.x == -PLAYER_MOVE_FORCE)
+        {
+            bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0.0f));
+            bdPlayer->applyForce(Vec2(PLAYER_START_FORCE, 0.0f));
+            _playerForce.x = PLAYER_START_FORCE;
+        }
+        else if (_playerForce.x == PLAYER_START_FORCE)
+        {
+            if (velocity.x > 300.0f)
+            {
+                CCLOG("300.0f");
+                bdPlayer->applyForce(Vec2(-PLAYER_START_FORCE, 0.0f));
+                bdPlayer->applyForce(Vec2(PLAYER_MOVE_FORCE, 0.0f));
+                _playerForce.x = PLAYER_MOVE_FORCE;
+            }
+        }
+        else if (_playerForce.x == PLAYER_MOVE_FORCE)
+        {
+            
+        }
     }
+    
+    // CCLOG("[v:%f, %f]", velocity.x, velocity.y);
 }
 
 void WorldLayer::up()

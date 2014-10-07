@@ -9,7 +9,8 @@
 #ifndef __XP__WorldLayer__
 #define __XP__WorldLayer__
 
-#define PLAYER_MOVE_FORCE 1000000
+#define PLAYER_START_FORCE  1000000.0f
+#define PLAYER_MOVE_FORCE   300000.0f
 
 #include "cocos2d.h"
 using namespace cocos2d;
@@ -43,6 +44,7 @@ private:
     Role    *_controlRole;
     Sprite  *_player;   //  player body node renference
     int     _playerMoveForceDir;
+    Vec2    _playerForce;
     
     bool _isDebug;
     int _oldContinueInput;

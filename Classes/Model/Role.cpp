@@ -59,7 +59,7 @@ bool Role::init(RoleData *data)
     if (!data) return true;
     
     auto bdPlayer = PhysicsBody::createBox(Size(_sprite->getContentSize()));
-    bdPlayer->setVelocityLimit(data->data.velocityLimit);
+    //bdPlayer->setVelocityLimit(data->data.velocityLimit);
     bdPlayer->getFirstShape()->setRestitution(0.0);
     bdPlayer->setRotationEnable(data->data.isCanRotate);
     
